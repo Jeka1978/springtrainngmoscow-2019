@@ -22,6 +22,9 @@ public class DistributionService {
             case WHATS_APP:
                 //25 lines of code
                 System.out.println("whatsapp was send: " + message.getContent());
+                break;
+            default:
+                throw new RuntimeException(distributionType + " not supported yet");
         }
     }
 }

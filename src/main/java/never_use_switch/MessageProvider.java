@@ -21,7 +21,7 @@ import static never_use_switch.DistribConst.WHATS_APP;
 public class MessageProvider {
     private final GameOfThrones gameOfThrones;
     private final Random random;
-    private List<String> types = asList(SMS, WHATS_APP);
+    private List<String> types = asList(SMS, WHATS_APP,"003");
     private final DistributionService service;
 
     @Scheduled(fixedDelay = 500)
