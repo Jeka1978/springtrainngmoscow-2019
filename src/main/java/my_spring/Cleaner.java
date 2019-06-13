@@ -4,5 +4,9 @@ package my_spring;
  * @author Evgeny Borisov
  */
 public interface Cleaner {
-    void clean();
+    abstract void clean();
+
+    void setRepeat(int repeat);
+
+    void хочуКофе();
 }

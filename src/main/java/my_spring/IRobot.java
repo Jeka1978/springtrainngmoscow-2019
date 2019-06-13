@@ -1,16 +1,23 @@
 package my_spring;
 
 
+import javax.annotation.PostConstruct;
+
 /**
  * @author Evgeny Borisov
  */
 public class IRobot {
-    private Speaker speaker = new ConsoleSpeaker();
-    private Cleaner cleaner = new CleanerImpl();
+    @InjectByType
+    private Speaker speaker;
+    @InjectByType
+    private Cleaner cleaner;
+
+    @PostConstruct
+    public void init() {
+        System.out.println(cleaner.getClass().getName());
+    }
 
     public void clean(){
-        speaker.speak("I started");
-        cleaner.clean();
-        speaker.speak("I finished");
+      cleaner.clean();
     }
 }
